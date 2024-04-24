@@ -4,6 +4,8 @@ import img from "../assets/Test1.png";
 import img1 from "../assets/Test2.jpeg";
 import "swiper/swiper-bundle.css";
 import CardPackage from "./CardPersonalPackage";
+import CardPackageFood from "./CardPackageFood";
+import CardPackagePhotographer from "./CardPackagePhotographer";
 const First = ({item}) => {
   useEffect(() => {
     const swiper = new Swiper(".slide-content", {
@@ -48,11 +50,16 @@ const First = ({item}) => {
       <div className="slide-container swiper-container">
         <div className="slide-content">
           <div className="card-wrapper swiper-wrapper">
-          <div className="card swiper-slide">
+          
             {item.map((content)=>(
-                <CardPackage card={content}/>
+              <>
+               <CardPackage card={content}/>
+                <CardPackageFood card={content}/>
+                <CardPackagePhotographer card={content}/>
+              </>
+               
             ))}
-            </div>
+
           </div>
         </div>
         <div className="swiper-button-next swiper-navBtn"></div>
