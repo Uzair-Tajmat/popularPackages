@@ -3,7 +3,8 @@ import Swiper from "swiper";
 import img from "../assets/Test1.png";
 import img1 from "../assets/Test2.jpeg";
 import "swiper/swiper-bundle.css";
-const First = () => {
+import CardPackage from "./CardPersonalPackage";
+const First = ({item}) => {
   useEffect(() => {
     const swiper = new Swiper(".slide-content", {
       slidesPerView: 1,
@@ -43,34 +44,14 @@ const First = () => {
   }, []);
   return (
     <div className="first">
-      <h1>Package Name</h1>
+     
       <div className="slide-container swiper-container">
         <div className="slide-content">
           <div className="card-wrapper swiper-wrapper">
-            <div className="card swiper-slide">
-              <div className="image-content card-image">
-                {/* <span className="overlay"></span> */}
-
-                <img
-                  src="https://img.weddingbazaar.com/shaadisaga_production/photos/pictures/007/196/969/new_large/blob?1687591932"
-                  alt=""
-                  className="card-img"
-                ></img>
-              </div>
-              <div class="card-content">
-                <h2 class="name">City Lawns</h2>
-                <p class="description">
-                  A magnifiecient place to combine hearts
-                </p>
-              </div>
-            </div>
-
-            <div className="card swiper-slide">
-              <div className="image-content card-image">
-                {/* <span className="overlay"></span> */}
-
-                <img src={img1} alt="" className="card-img"></img>
-              </div>
+          <div className="card swiper-slide">
+            {item.map((content)=>(
+                <CardPackage card={content}/>
+            ))}
             </div>
           </div>
         </div>
