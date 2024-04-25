@@ -9,11 +9,10 @@ const CardPackage = ({ card }) => {
       </div>
       <div className="card-content">
         <h2 className="name">{card.venue.venue}</h2>
-        <p className="description">{card.venue.venueDescription}</p>
+        <p className="description">{card.venue.venueDiscription}</p>
       </div>
 
       {/* Food */}
-     
     </div>
   );
 };
